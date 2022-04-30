@@ -1,11 +1,11 @@
 version: 3
 
+vars:
+  BUILD_DIR: "build3"
+
 tasks:
-  pre:
-    cmds:
-      - mkdir -p build
   build:
-    dir: ./build
     cmds:
-      - meson ..
-      - ninja
+      - eval [ -d "{{.BUILD_DIR}}" ] || mkdir {{.BUILD_DIR}}
+      - docker build -t i3-builder:latest .
+      - docker run -e OUT=./{{.BUILD_DIR}} -v $PWD:/tmp/i3 -it --rm i3-builder:latest
