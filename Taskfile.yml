@@ -1,0 +1,11 @@
+version: 3
+
+tasks:
+  pre:
+    cmds:
+      - mkdir -p build
+  build:
+    dir: ./build
+    cmds:
+      - meson ..
+      - ninja

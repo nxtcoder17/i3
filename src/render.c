@@ -27,10 +27,12 @@ bool has_adjacent_container(Con *con, direction_t direction);
  * Returns the height for the decorations
  */
 int render_deco_height(void) {
-    int deco_height = config.font.height + 4;
-    if (config.font.height & 0x01)
-        ++deco_height;
-    return deco_height;
+    // REF: [github issue](https://github.com/i3/i3/issues/2664#issuecomment-632246008)
+    return 0;
+    /* int deco_height = config.font.height + 4; */
+    /* if (config.font.height & 0x01) */
+    /*     ++deco_height; */
+    /* return deco_height; */
 }
 
 /*
