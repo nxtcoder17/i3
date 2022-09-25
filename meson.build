@@ -6,7 +6,7 @@
 project(
   'i3',
   'c',
-  version: '4.20.1',
+  version: '4.21',
   default_options: [
     'c_std=c11',
     'warning_level=1',  # enable all warnings (-Wall)
@@ -409,6 +409,7 @@ i3srcs = [
   'src/sighandler.c',
   'src/startup.c',
   'src/sync.c',
+  'src/tiling_drag.c',
   'src/tree.c',
   'src/util.c',
   'src/version.c',
